@@ -1,5 +1,6 @@
 package qrizzly.project.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import qrizzly.project.model.Reports;
@@ -7,11 +8,11 @@ import qrizzly.project.store.ReportsDao;
 
 import java.util.List;
 
-@Service("reportsService")
+@Service("reportsServiceImpl")
 @Transactional
 public class ReportsServiceImpl implements ReportsService {
 
-
+	@Autowired
 	private ReportsDao dao;
 
 	public ReportsServiceImpl() {

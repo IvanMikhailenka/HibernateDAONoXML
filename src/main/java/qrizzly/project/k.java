@@ -4,7 +4,8 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.support.AbstractApplicationContext;
 import qrizzly.project.model.Reports;
 import qrizzly.project.service.AllService;
-import qrizzly.project.spring.AppConfig;
+import qrizzly.project.config.HibernateConfig;
+import qrizzly.project.service.ReportsService;
 
 import java.util.List;
 
@@ -12,8 +13,9 @@ import java.util.List;
  * Created by Ivan on 05.02.2017.
  */
 public class k {
+
   public static void main(String... args){
-    AbstractApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+    AbstractApplicationContext context = new AnnotationConfigApplicationContext(HibernateConfig.class);
 
 //        ReportsDao reportsDao = (ReportsDao) context.getBean("reportsDao");
 //        List<Reports> allReports = reportsDao.findAll();
@@ -26,7 +28,7 @@ public class k {
 //        for (Reports emp : reportss) {
 //            System.out.println(emp);
 //        }
-    AllService allService = (AllService) context.getBean("allService1");
+    ReportsService reportsService = (ReportsService) context.getBean("reportsServiceImpl");
 
 
     Reports reports = new Reports();
@@ -35,7 +37,7 @@ public class k {
 
    // allService.getReportsDao().add(reports);
     // allService.getReportsDao().delete(1);
-    List<Reports> reportsList = allService.getReportsDao().findAll();
+    List<Reports> reportsList = reportsService.findAllReports();
     for (Reports emp : reportsList) {
       System.out.println(emp);
     }

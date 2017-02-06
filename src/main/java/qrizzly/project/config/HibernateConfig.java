@@ -1,4 +1,4 @@
-package qrizzly.project.spring;
+package qrizzly.project.config;
 
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +24,7 @@ import java.util.Properties;
 @EnableTransactionManagement
 @ComponentScan({ "qrizzly.project" })
 @PropertySource(value = { "classpath:application.properties" })
-public class AppConfig {
+public class HibernateConfig {
 
     @Autowired
     private Environment environment;
@@ -62,7 +62,7 @@ public class AppConfig {
         txManager.setSessionFactory(s);
         return txManager;
     }
-    @Bean(name = "reportsS")
+  /*  @Bean(name = "reportsS")
     @Autowired
     @Qualifier("reportsDaoImpl")
     public ReportsServiceImpl reportsService(ReportsDao reportsDao){
@@ -82,7 +82,7 @@ public class AppConfig {
         AllService service = new AllService();
         service.setReportsDao(reportsDao);
         return service;
-    }
+    }*/
 }
 
 

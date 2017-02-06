@@ -9,7 +9,6 @@ import qrizzly.project.model.Reports;
 import java.util.List;
 
 @Repository
-@Transactional
 public class ReportsDaoImpl extends AbstractDao implements ReportsDao {
 
 	public ReportsDaoImpl() {
