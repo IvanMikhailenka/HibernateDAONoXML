@@ -1,7 +1,7 @@
-package qrizzly.project.store;
+package project.store;
 
 
-import qrizzly.project.model.Reports;
+import project.model.Reports;
 
 import java.util.List;
 

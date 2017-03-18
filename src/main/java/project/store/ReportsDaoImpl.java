@@ -1,10 +1,9 @@
-package qrizzly.project.store;
+package project.store;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
-import qrizzly.project.model.Reports;
+import project.model.Reports;
 
 import java.util.List;
 

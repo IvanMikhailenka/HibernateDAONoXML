@@ -1,4 +1,4 @@
-package qrizzly.project.store;
+package project.store;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

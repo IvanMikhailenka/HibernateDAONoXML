@@ -1,20 +1,19 @@
-package qrizzly.project;
+package project;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
-import qrizzly.project.model.Reports;
-import qrizzly.project.service.AllService;
-import qrizzly.project.config.HibernateConfig;
-import qrizzly.project.service.ReportsService;
+import project.config.HibernateConfig;
+import project.model.Reports;
+import project.service.ReportsService;
 
 import java.util.List;
 
 /**
  * Created by Ivan on 05.02.2017.
  */
-public class k {
+public class Main {
 
-  public static void main(String... args){
+  public static void main(String... args) {
     AbstractApplicationContext context = new AnnotationConfigApplicationContext(HibernateConfig.class);
 
 //        ReportsDao reportsDao = (ReportsDao) context.getBean("reportsDao");
@@ -35,14 +34,12 @@ public class k {
     reports.setPerformer("Kate");
     reports.setActivity("someActivity");
 
-   // allService.getReportsDao().add(reports);
+    // allService.getReportsDao().add(reports);
     // allService.getReportsDao().delete(1);
     List<Reports> reportsList = reportsService.findAllReports();
     for (Reports emp : reportsList) {
       System.out.println(emp);
     }
-
-
 
     context.close();
 
